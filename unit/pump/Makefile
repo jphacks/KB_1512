@@ -1,8 +1,5 @@
 .PHONY: all
 all: poller pump
-poller:
-	scp ./unit.c edison1:~/src/unit/unit.c
-	ssh edison1 'cd ~/src/unit/ && gcc -lmraa -o unit_daemon unit.c'
 
 pump:
 	scp ./pump.c edison1:~/src/unit/pump.c
