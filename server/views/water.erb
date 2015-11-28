@@ -13,9 +13,9 @@
 		<span>sunny</span>
 	</div>
 
-	<div class="btn-group" role="group" aria-label="...">
-		<button type="button" class="btn btn-default"> Water </button>
-	</div>
+	<div id="button">
+		<a id="button-word" href="/water">Water</a>
+	</div>	
 
 </div>
 
@@ -34,18 +34,41 @@ body{
 
 #sidebar{
 	float: left;
-	margin: auto;
 }
 
 #humidity{
-
+	font-size: 200%;
+	margin-top: 30; 
+	margin-left: 30;
 }
 
 #weather{
-
+ font-size: 200%;
+	margin-top: 30;
+	margin-left: 30;
 }
 
 .parameter{
+}
+
+#button{
+	border: 2px solid #000000;
+	border-radius: 5px;
+	width: 80px;
+	height: 40px;
+	margin-top: 30;
+	margin-left: 95;
+}
+
+#button-word{
+	display: block;
+	position: relative;
+	font-family: HelveticaNeue;
+	font-size: 18px;
+	color: #000000;
+	line-height: 22px;
+	margin-left: 16;
+	margin-top: 7;
 }
 
 </style>
