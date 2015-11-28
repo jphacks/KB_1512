@@ -1,10 +1,23 @@
 <div id="button">
 	<a id="button-word" href="/water/<%= @id %>">Plant</a>
+	<p id="sentence">You can stop desertification.</p>
 </div>
 
 <div id="about">
+	<h1>About iTree</h1>
+
+	<div id="shopping">
+		<span id="shopping-logo" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+		<p id="shopping-word">You buy seeding.</p>
+	</div>
 	
+	<div id="water">
+		<span id="water-logo" class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+		<p id="water-word">You can water the remote seeding from here.</p>
+	</div>
+
 </div>
+
 
 <style>
 body{
@@ -18,16 +31,68 @@ body{
 	border-radius: 5px;
 	width: 80px;
 	height: 40px;
-	margin: 40% 0 0 20%;
+	margin: 43% 0 0 20%;
 }
 
 #button-word{
+	display: block;
 	position: relative;
 	font-family: HelveticaNeue;
 	font-size: 18px;
 	color: #000000;
 	line-height: 22px;
 	margin-left: 16;
+	margin-top: 7;
 }
 
+#sentence{
+	display: block;
+	font-family: HelveticaNeue;
+	font-size: 18px;
+	color: #000000;
+	line-height: 22px;
+	width: 125;
+	margin: -45% 0 0 125%;
+}
+
+h1{
+	width: 275px;
+	margin: 30% 0 0 40%;
+	font-size: 50;
+}
+
+#shopping{
+	width: 35%;
+	font-family: HelveticaNeue;
+	font-size: 43;
+	margin: 4% 0 0 8%;
+	float: left;
+}
+
+#shopping-logo{
+	font-size: 80;
+	margin: 5% 0 0 52%;
+}
+
+#shopping-word{
+	text-align: center;
+	margin: 3% 0 30% 22%;
+}
+
+#water{
+	width: 48%;
+	font-family: HelveticaNeue;
+	font-size: 43;
+	float: left;
+}
+
+#water-logo{
+	font-size: 80;
+	margin: 10% 0 0 42%;
+}
+
+#water-word{
+	text-align: center;
+	margin: 3% 0% 30% 0%;
+}
 </style>
