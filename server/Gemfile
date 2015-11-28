@@ -8,7 +8,7 @@ gem 'sinatra-contrib'
 gem 'json'
 
 #database
-gem "mysql2"
+gem "sqlite3"
 #O/R mapper
 gem "activerecord"
 
