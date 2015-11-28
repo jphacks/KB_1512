@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require 'active_record'
 require 'json'
+require 'mysql2'
 #require 'omniauth-twitter'
 #require 'twitter'
 
@@ -9,7 +10,7 @@ require 'json'
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
 ActiveRecord::Base.establish_connection('development')
 
-class Topic < ActiveRecord::Base
+class User < ActiveRecord::Base
 end
 
 #Time out error
@@ -37,7 +38,12 @@ get '/register' do
 end
 
 post '/register' do
-	'register'
+	user = User.new
+	user.name = params[:name]
+	user.email = params[:mail]
+	user.password = params[:pass]
+	user.save
+	redirect '/home'
 end
 
 get '/login' do

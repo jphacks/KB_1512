@@ -1,4 +1,3 @@
 development:
   adapter: sqlite3
-  database: sample.db
-
+  database: itree.db
