@@ -18,6 +18,14 @@ after do
   ActiveRecord::Base.connection.close
 end
 
+enable :sessions
+
+before do
+	unless session[:id].to_s.empty? then
+		@id = session[:id]
+	end
+end
+
 #########################################################################################
 
 get '/' do
@@ -29,8 +37,16 @@ get '/home' do
 	erb :home
 end
 
-get '/water' do
-	erb :water
+get '/water/:id' do
+	unless session[:id].to_s.empty? then
+		erb :water	
+	else
+		erb :login
+	end
+end
+
+get '/water/' do
+	redirect :login
 end
 
 get '/register' do
@@ -47,13 +63,29 @@ post '/register' do
 end
 
 get '/login' do
-	erb :login
+	unless session[:id].to_s.empty? then
+		redirect "water/" + session[:id].to_s
+	else
+		erb :login
+	end
 end
 
 post '/login' do
-	'login'
+	user = User.find_by_email(params[:mail])
+	if params[:pass] == user.password then
+		session[:id] = user.id
+		redirect "water/" + user.id.to_s
+	else
+		redirect "login"
+	end	
 end
 
+get '/logout' do
+	unless session[:id].to_s.empty? then
+		session.clear
+	end
+	redirect 'home'
+end
 
 
 
