@@ -28,7 +28,7 @@ get '/home' do
 	erb :home
 end
 
-get '/water/:id' do
+get '/water' do
 	erb :water
 end
 
