@@ -15,17 +15,19 @@
 
 ## 開発技術
 ### 活用した技術
+ * MQTT
+
 #### API・データ
-* 
-* 
+ * hoge
 
 #### フレームワーク・ライブラリ・モジュール
-* 
-* 
+ * Sinatra
+ * hoge
 
 #### デバイス
-* 
-* 
+ * Intel Edison Kit for Arduino
+ * CC2541 SensorTag
+ * 2SD734
 
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
