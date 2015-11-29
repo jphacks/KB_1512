@@ -80,8 +80,8 @@ client.on('connect', function () {
 							path: '/command/' + unit_id,
 							agent: false
 						}, function(res) {
-							if (res.) {
-								
+							if (res.dur) {
+								//ポンプを動かす
 							}
 						});
 					}, 6000);
