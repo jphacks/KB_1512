@@ -62,7 +62,9 @@ end
 
 get '/getcommand/:id' do
 	command = Command.find_by_id(params[:id]);
-	return command.to_json
+	command.delete
+	command_tmp = command.to_json
+	return command_tmp
 end
 
 get '/register' do
