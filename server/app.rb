@@ -2,18 +2,18 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require 'active_record'
 require 'json'
-require 'mongoid'
+#require 'mongoid'
 
 #sqlite
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
-ActiveRecord::Base.establish_connection('development')
+ActiveRecord::Base.establish_connection(:development)
 
 class User < ActiveRecord::Base
 end
 class Command < ActiveRecord::Base
 end
 
-con = Mongo::Connection.new()
+#con = Mongo::Connection.new()
 
 #Time out error
 after do
@@ -41,7 +41,8 @@ end
 
 get '/water/:id' do
 	unless session[:id].to_s.empty? then
-		@data = con.db("mori").collection("sensed").find_one
+		#@data = con.db("mori").collection("sensed").find_one
+		@data = {humidity: 45, temperature: 27}
 		erb :water	
 	else
 		erb :login
