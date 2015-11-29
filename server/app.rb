@@ -57,8 +57,11 @@ post '/water/:id' do
 	command.save
 end
 
-get '/water/:id' do
-
+get '/getcommand/:id' do
+	command = Command.find_by_id(params[:id]);
+	command.delete
+	command_tmp = command.to_json
+	return command_tmp
 end
 
 get '/register' do
