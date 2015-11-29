@@ -3,6 +3,7 @@ require "sinatra/reloader" if development?
 require 'active_record'
 require 'json'
 require 'mysql2'
+require 'mongoid'
 #require 'omniauth-twitter'
 #require 'twitter'
 
