@@ -61,6 +61,7 @@ get '/getcommand/:id' do
 	command = Command.find_by_id(params[:id]);
 	command.delete
 	command_tmp = command.to_json
+	puts command
 	return command_tmp
 end
 
