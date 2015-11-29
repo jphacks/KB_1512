@@ -1,7 +1,31 @@
 var mqtt = require('mqtt');
 var SensorTag = require('sensortag');
+var uuid = require('node-uuid');
+var fs = require('fs');
+
+var unit_id;
+
+fs.exists('/opt/mori/uuid',  function(exists) {
+	if (!exists) {
+		console.log('First time startup, generating uuid');
+		var gen_id = uuid.v4();
+		fs.writeFile('/opt/mori/uuid', gen_id, 'utf8', function(error) {
+			if (error)
+				console.log('FATAL ERROR!');
+			console.log('uuid saved');
+		});
+		unit_id = gen_id;
+	} else {
+		fs.readFile('/opt/mori/uuid', 'utf8', function (err, data) {
+			unit_id = data;
+			console.log(unit_id);
+		});
+	}
+});
 
 var client = mqtt.connect('mqtt://tree:tree@m11.cloudmqtt.com:19539');
+
+
 
 client.on('connect', function () {
 	SensorTag.discoverAll(function (sensorTag) {
@@ -15,7 +39,7 @@ client.on('connect', function () {
 						console.log("enableIrTemp" + error);	
 					setInterval(function() {
 						var data = {
-							'uuid': 0,
+							'uuid': unit_id,
 							'temperature': 0,
 							'humidity': 0
 						};
