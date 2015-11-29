@@ -2,12 +2,9 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require 'active_record'
 require 'json'
-require 'mysql2'
 require 'mongoid'
-#require 'omniauth-twitter'
-#require 'twitter'
 
-#mysql
+#sqlite
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
 ActiveRecord::Base.establish_connection('development')
 
