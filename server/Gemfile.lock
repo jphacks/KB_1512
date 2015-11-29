@@ -16,12 +16,15 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     backports (3.6.7)
+    bson (3.2.6)
     builder (3.2.2)
     daemons (1.2.3)
     eventmachine (1.0.8)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.8.3)
+    mongo (2.1.2)
+      bson (~> 3.0)
     multi_json (1.11.2)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -55,6 +58,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   json
+  mongo
   sinatra
   sinatra-contrib
   sqlite3

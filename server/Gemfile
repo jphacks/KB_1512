@@ -9,7 +9,7 @@ gem 'json'
 
 #database
 gem "sqlite3"
-gem "mongoid"
+gem "mongo"
 
 #O/R mapper
 gem "activerecord"
