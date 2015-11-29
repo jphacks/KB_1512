@@ -8,7 +8,8 @@
   },
   "author": "DIT_CRACK",
   "license": "MIT",
-  "devDependencies": {
-    "mqtt": "^1.5.0"
+  "dependencies": {
+    "mqtt": "^1.5.0",
+    "sensortag": "^1.2.0"
   }
 }
