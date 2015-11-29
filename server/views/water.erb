@@ -5,12 +5,12 @@
 <div id="sidebar">
 	<div id="humidity">	
 		<span class="glyphicon glyphicon-tint parameter" aria-hidden="true"> Humidity </span>
-		<span class="parameter">3%</span>
+		<span class="parameter"><%= @data.humidity %></span>
 	</div>
 
 	<div id="temperture">
 		<span class="glyphicon glyphicon-indent-right" aria-hidden="true" width="5%"> Temperture </span>
-		<span>25.5℃</span>
+		<span><%= @data.temperature %>℃</span>
 	</div>
 
 	<div id="weather">

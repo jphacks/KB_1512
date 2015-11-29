@@ -13,6 +13,16 @@ end
 class Command < ActiveRecord::Base
 end
 
+class Sensed
+  include Mongoid::Document
+	field :uuid, type: String
+	field :timestamp, type: Integer
+	field :humidity, type: Float
+	field :temperature, type: Float
+end
+
+Mongoid.load!('mongoid.yml', :development)
+
 #Time out error
 after do
   ActiveRecord::Base.connection.close
@@ -39,6 +49,7 @@ end
 
 get '/water/:id' do
 	unless session[:id].to_s.empty? then
+		@data = Sensed.find(uuid: "68f34807-55ce-454d-8302-b718caf9c0c0").first
 		erb :water	
 	else
 		erb :login

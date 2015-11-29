@@ -1,6 +1,6 @@
-default:
+development:
   clients:
     default:
       database: mori
       hosts:
-        - localhost:27017
+        - 127.0.0.1:27017
