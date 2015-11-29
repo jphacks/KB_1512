@@ -10,8 +10,12 @@
 				  <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" name="pass">
 		</div>
 
+		<div id="if">
+			<p>If you have not register, click <a href="/register">here</a></p>
+		</div>
+
 		<div id="button" class="btn-group" role="group" aria-label="...">
-			<button type="submit" class="btn btn-default">login</button>
+			<button id="button-word" type="submit" class="btn btn-default">login</button>
 		</div>
 	</div>	
 </form>
@@ -29,8 +33,15 @@ body{
 	margin: 35% 5% 0% 60%;
 }
 
+.input-group{
+	margin: 3% 0 3% 0;
+}
+
 #button{
 	float: right;
 }
 
+#if{
+	float: left;
+}
 </style>
