@@ -10,8 +10,6 @@ ActiveRecord::Base.establish_connection('development')
 
 class User < ActiveRecord::Base
 end
-class Command < ActiveRecord::Base
-end
 
 #Time out error
 after do
@@ -47,18 +45,6 @@ end
 
 get '/water/' do
 	redirect :login
-end
-
-post '/water/:id' do
-	command = Command.new
-	command.id = params[:user_id]
-	command.date = params[:today_time]
-	command.command = 0
-	command.save
-end
-
-get '/water/:id' do
-
 end
 
 get '/register' do
