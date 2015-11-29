@@ -69,7 +69,7 @@ get '/register' do
 end
 
 post '/register' do
-	user = User.find_by_id(params[:id]);
+	user = User.new
 	user.name = params[:name]
 	user.email = params[:mail]
 	user.password = params[:pass]
