@@ -18,7 +18,7 @@ fs.exists('/opt/mori/uuid',  function(exists) {
 				'uuid': unit_id
 			});
 			var options = {
-				hostname: 'example.com',
+				hostname: '192.168.128.35',
 				port: 80,
 				path: '/device/registration',
 				headers: {
@@ -75,7 +75,7 @@ client.on('connect', function () {
 							console.log(JSON.stringify(data));
 						});
 						http.get({
-							hostname: 'example.com',
+							hostname: '192.168.128.35',
 							port: 80,
 							path: '/command/' + unit_id,
 							agent: false
