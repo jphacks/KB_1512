@@ -1,5 +1,5 @@
 <div id="screen">
-	<img src="./images/ｽ.jpg" width="100%">
+	<img src="/images/ｽ.jpg" width="100%">
 </div>
 
 <div id="sidebar">
@@ -14,7 +14,7 @@
 	</div>
 
 	<div id="button">
-		<a id="button-word" href="/water">Water</a>
+		<button id="button-word" class="water" href="#" data-id="<%= @id %>">Water</button>
 	</div>	
 
 </div>
@@ -52,23 +52,33 @@ body{
 }
 
 #button{
-	border: 2px solid #000000;
-	border-radius: 5px;
 	width: 80px;
 	height: 40px;
 	margin-top: 30;
 	margin-left: 95;
 }
 
-#button-word{
-	display: block;
-	position: relative;
-	font-family: HelveticaNeue;
-	font-size: 18px;
-	color: #000000;
-	line-height: 22px;
-	margin-left: 16;
-	margin-top: 7;
-}
+
 
 </style>
+
+<script type='text/javascript'>
+$(function(){
+	$('.water').click(function(e){
+		e.preventDefault();
+		var id = $(this).data("id");
+		var today = new Date();
+		$.ajax({
+			type: 'POST',
+			url: '/water/' + id,
+			data: {
+				user_id: id,
+				today_time: today
+			},
+			success: function(json){
+			}
+		});
+	});
+});
+
+</script>
